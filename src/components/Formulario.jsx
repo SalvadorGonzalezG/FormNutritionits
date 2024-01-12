@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { FcVlc } from "react-icons/fc";
+
 import Error from "./Error";
 
 const Formulario = ({ paciente, setPaciente }) => {
@@ -11,6 +11,12 @@ const Formulario = ({ paciente, setPaciente }) => {
     const [meta, setMeta] = useState('')
 
     const [error, setError] = useState(false)
+
+    const generateId = () =>{
+        const random = Math.random().toString(20).substring(2);
+        const date = Date.now().toString(20)
+        return random + date
+    }
 
     // funcion que recibira el boton de enviar formulario .
     const handleSubmit = (e) => {
@@ -32,7 +38,8 @@ const Formulario = ({ paciente, setPaciente }) => {
             number, 
             email, 
             date, 
-            meta
+            meta,
+            id: generateId()
         }
         
         // spreed operator metodo inmutable tomo una copia del arreglo y lo agrega al objeto.

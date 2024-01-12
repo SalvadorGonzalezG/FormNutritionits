@@ -14,6 +14,7 @@ const ListadoPacientes = ({paciente}) => {
             { paciente.map( lisPac => ( // iteracion de cada uno de los pacientes se van colocando en pantalla.
 
                     <Paciente 
+                        key={lisPac.id}
                         lisPac={lisPac}
                     />
                 
