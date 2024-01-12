@@ -25,6 +25,19 @@ const Paciente = ({ lisPac }) => {
                 <p className="font-bold mb-3 text-gray-700 uppercase"> Meta: {''}
                     <span className="font-normal normal-case">{meta}</span>
                 </p>
+                <div className="flex justify-around ">
+                    <button 
+                      type="button"
+                      className="py-2 px-7 hover:bg-indigo-300 bg-sky-400 text-white font-bold uppercase rounded-lg"
+                    >  Editar
+                    </button>
+                    <button 
+                      type="button"
+                      className="py-2 px-7 hover:bg-red-700 bg-red-600 text-white font-bold uppercase rounded-lg"
+                    >
+                        Eliminar
+                    </button>
+                </div>
             </div>
   )
 }
