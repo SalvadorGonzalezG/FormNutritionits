@@ -27,10 +27,14 @@ const ListadoPacientes = ({ paciente, setUpPaciente, deletePaciente }) => {
                 :
                 (
                     <>
-                        <h2 className="font-black text-3xl text-center"  >Lista Pacientes para completar el texto.</h2>
+                        <h2 className="font-black text-3xl text-center"  >Lista de Pacientes.</h2>
                         <p className="text-xl mt-5 mb-10 text-center">
                             Bienvenido!! Ingresa tus {''}
-                            <span className="text-red-600 font-bold ">Pacientes.</span>
+                            <span className="text-red-800 font-bold ">Pa</span>
+                            <span className="text-red-700 font-bold ">ci</span>
+                            <span className="text-red-600 font-bold ">en</span>
+                            <span className="text-red-500 font-bold ">te</span>
+                            <span className="text-red-400 font-bold ">s.</span>
                         </p>
                     </>
                 )}
