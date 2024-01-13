@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 
 import Error from "./Error";
 
-const Formulario = ({ paciente, setPaciente }) => {
+const Formulario = ({ paciente, setPaciente, upPaciente, setUpPaciente }) => {
 
     const [nombre, setNombre] = useState('')
     const [number, setNumber] = useState('')
@@ -11,6 +11,19 @@ const Formulario = ({ paciente, setPaciente }) => {
     const [meta, setMeta] = useState('')
 
     const [error, setError] = useState(false)
+
+    useEffect(()=>{
+        //Forma de comprobar si un objeto tiene algo
+        if(Object.keys(upPaciente).length>0){
+            setNombre(upPaciente.nombre)
+            setNumber(upPaciente.number)
+            setEmail(upPaciente.email)
+            setDate(upPaciente.date)
+            setMeta(upPaciente.meta)
+        }
+    },[upPaciente]) //dependencias cuando el valor de una dependencia cambia se realiza un rederizado
+
+    
 
     const generateId = () =>{
         const random = Math.random().toString(20).substring(2);
@@ -38,12 +51,24 @@ const Formulario = ({ paciente, setPaciente }) => {
             number, 
             email, 
             date, 
-            meta,
-            id: generateId()
+            meta
         }
-        
-        // spreed operator metodo inmutable tomo una copia del arreglo y lo agrega al objeto.
+        // Validacion para editar un registro.
+        if(upPaciente.id){
+            // Editando el registro
+            objetoPaciente.id = upPaciente.id
+            
+            const pacientesActualizados = paciente.map(pacienteState => pacienteState.id === upPaciente.id ? objetoPaciente : pacienteState )
+            setPaciente(pacientesActualizados)
+            // estado modificador que regresa al estado inicial
+            setUpPaciente({})
+
+        } else{
+            // Nuevo registro
+            // spreed operator metodo inmutable tomo una copia del arreglo y lo agrega al objeto.
+            objetoPaciente.id= generateId()
         setPaciente([...paciente, objetoPaciente])
+        } 
 
         // Reiniciar el form. despues de enviar los datos del mismo form
         setNombre('')
@@ -145,7 +170,7 @@ const Formulario = ({ paciente, setPaciente }) => {
                 <input
                     type="submit"
                     className="bg-red-600 rounded-md w-full p-1 text-white uppercase font-semibold hover:bg-green-600 cursor-pointer transition-opacity"
-                    value='Send'
+                    value={upPaciente.id ? "Editar Paciente."  : 'Agregar paciente.'}
                 />
             </form>
 

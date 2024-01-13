@@ -1,8 +1,7 @@
 import Paciente from "./Paciente"
 
 // prop extraido desde el estado que se encuentra en App.jsx.
-const ListadoPacientes = ({ paciente }) => {
-
+const ListadoPacientes = ({ paciente, setUpPaciente }) => {
 
     return (
         <div className="md:w-1/2 lg:w-3/5 md:h-screen overflow-y-scroll">
@@ -18,6 +17,7 @@ const ListadoPacientes = ({ paciente }) => {
                         <Paciente
                             key={lisPac.id}
                             lisPac={lisPac}
+                            setUpPaciente={setUpPaciente}
                         />
 
                     ))}
