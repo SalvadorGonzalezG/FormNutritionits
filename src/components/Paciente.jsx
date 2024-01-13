@@ -1,8 +1,16 @@
 
 
-const Paciente = ({ lisPac, setUpPaciente, setDelPaciente}) => {
+const Paciente = ({ lisPac, setUpPaciente, deletePaciente }) => {
 
-    const {nombre, number, email, date, meta} = lisPac
+    const {nombre, number, email, date, meta, id} = lisPac
+
+    const handleDelete = () => {
+
+        const respuesta = confirm('Deseas Eliminar al paciente')
+        if(respuesta) {
+            deletePaciente(id)
+        }
+    }
 
   return (
     <div className="mx-5 bg-white shadow-md px-5 py-10 rounded-md mt-5">
@@ -35,7 +43,7 @@ const Paciente = ({ lisPac, setUpPaciente, setDelPaciente}) => {
                     <button 
                       type="button"
                       className="py-2 px-7 hover:bg-red-700 bg-red-600 text-white font-bold uppercase rounded-lg"
-                      onClick={()=> delete(setDelPaciente(lisPac))}
+                      onClick={handleDelete}
                     >
                         Eliminar
                     </button>

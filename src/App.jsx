@@ -9,8 +9,14 @@ function App() {
   const [paciente, setPaciente] = useState([]);
   // cada uno de los pacientes es un objeto por lo tanto el estado comienza con un objeto vacio
   const [upPaciente, setUpPaciente] = useState({})
-  // estado para eliminar un paciente.
-  const [delPaciente, setDelPaciente] = useState({})
+
+  // funcion para eliminar un paciente
+  const deletePaciente = (id) => {
+  //.filter no muta el objeto original sino que  genera uno nuevo.
+    const pacientesActualizados = paciente.filter(upPaciente=>upPaciente.id !== id)
+    setPaciente(pacientesActualizados)
+  }
+  
   
 
   return (
@@ -29,7 +35,7 @@ function App() {
         <ListadoPacientes 
           paciente={paciente}
           setUpPaciente={setUpPaciente}
-          setDelPaciente={setDelPaciente}
+          deletePaciente={deletePaciente}
         />
 
       </div>
