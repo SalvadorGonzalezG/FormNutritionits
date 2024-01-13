@@ -82,7 +82,7 @@ const Formulario = ({ paciente, setPaciente, upPaciente, setUpPaciente }) => {
         <div className="w-1/2 lg:w-2/5 mx-5">
             <h2 className="font-black text-3xl text-center">Seguimiento de pacientes.</h2>
 
-            <p className="text-lg mt-5 text-center mb-10">
+            <p className="text-lg mt-3 text-center mb-10">
                 Ingresa los datos {''}
                 <span className="text-purple-300 font-bold">de</span>
                 <span className="text-purple-400 font-bold">l p</span>
