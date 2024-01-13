@@ -5,7 +5,7 @@ const Header = () => {
     <>
         <h1 className="font-black text-5xl text-center md:w-2/3 mx-auto">
             Seguimiento Dieta {' '}
-            <span className="text-red-600">Nutriologo.</span>  
+            <span className="text-blue-200">Nutriologo.</span>  
         </h1>
     </>
   )
