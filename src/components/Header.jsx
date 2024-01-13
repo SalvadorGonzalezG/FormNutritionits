@@ -1,4 +1,5 @@
 import { FcApproval } from "react-icons/fc";
+
 const Header = () => {
   
   return (
@@ -11,7 +12,8 @@ const Header = () => {
             <span className="text-green-800">ta</span>
             <span className="text-green-900">l.</span>
         </h1>
-        <h2 className=" mt-4 text-5xl text-center mx-auto w-3">  <FcApproval /> </h2>
+        <h2 className=" mt-4 text-5xl text-center mx-auto w-5"> <FcApproval /> </h2>
+        
        
         
     </>
