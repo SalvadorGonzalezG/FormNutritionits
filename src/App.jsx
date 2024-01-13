@@ -37,6 +37,10 @@ function App() {
 
   return (
     <div className="container mx-auto mt-5">
+      <a href="https://github.com/SalvadorGonzalezG/FormNutritionits" target='blank'>
+      <button  className="bg-amber-400 rounded-md text-white font-semibold mx-6 hover:bg-amber-500" >GitHub.</button>
+      </a>
+      
       <Header />
 
       <div className="mt-12 md:flex">
